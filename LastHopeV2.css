@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+.lh2-container {
+            max-width: 700px;
+             width: 100%;
+            margin: 10px auto;
+            background: linear-gradient(145deg, #2d0a0a, #1a0505);
+            border-radius: 20px;
+            border: 2px solid #660000;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+
+        .lh2header {
+            background: linear-gradient(135deg, #8b0000, #4b0000);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid #660000;
+        }
+
+
+        .lh2title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 5px;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.8),
+                0 0 10px rgba(139, 0, 0, 0.5);
+           letter-spacing: 2px;
+        }
+
+
+        .lh2subtitle {
+            color: #cccccc;
+            font-size: 1rem;
+            opacity: 0.9;
+            font-style: bold;
+        }
+
+
+        .lh2content {
+            display: flex;
+            padding: 25px;
+            gap: 20px;
+            align-items: flex-start;
+            position: relative;
+        }
+
+
+        .lh2left-section {
+            flex: 0 0 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+
+        .lh2character-image {
+            position: relative;
+        }
+
+
+        .lh2character-image {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 
+                10px 20px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border: 3px solid #660000;
+        }
+
+
+        .lh2status-indicator {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); 
+            z-index: 10;
+        }
+
+
+        .status-alive {
+            background: linear-gradient(135deg, #00ff00, #008800);
+            animation: pulse-green 2s ease-in-out infinite;
+        }
+
+
+        .status-dead {
+            background: linear-gradient(135deg, #ff0000, #880000);
+            animation: pulse-red 2s ease-in-out infinite;
+        }
+
+
+        .lh2character-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .lh2image-caption {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+
+        .lh2image-caption textarea {
+            height: auto;
+            min-height: 2em;
+            max-height: 8em;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 14px;
+            resize: none;
+            font-family: inherit;
+            line-height: 1.5;
+            overflow-y: auto;
+            field-sizing: content;
+        }
+
+
+        .lh2image-caption textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+
+        .lh2image-caption textarea:focus {
+            outline: none;
+        }
+
+
+        .lh2message-area {
+            flex: 1;
+            background: linear-gradient(145deg, #1a0505, #0d0202);
+            border: 2px solid #4b0000;
+            border-radius: 12px;
+            padding: 15px;
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            font-family: "Bai Jamjuree", sans-serif;
+            box-shadow: 
+                inset 0 2px 4px rgba(0, 0, 0, 0.3),
+                0 2px 8px rgba(139, 0, 0, 0.2);
+            position: relative;
+            min-height: 80px;
+            backdrop-filter: blur(10px);
+        }
+
+
+        .lh2roleplay-text {
+            color: white;
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 10px 0;
+            font-weight: 500;
+        }
+
+
+        .lh2footer {
+            background: linear-gradient(135deg, #0d0202, #1a0505);
+            padding: 15px 25px;
+            border-top: 1px solid #4b0000;
+            text-align: center;
+        }
+
+
+        .lh2textfooter {
+            color: #888;
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+
+        @media (max-width: 768px) {
+            .lh2content {
+                flex-direction: column;
+            }
+            
+            .lh2left-section {
+                flex: none;
+                align-items: center;
+            }
+          @keyframes pulse-green {
+            0%, 100% { 
+                box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+                transform: scale(1.1);
+            }
+        }
+
+
+          @keyframes pulse-red {
+            0%, 100% { 
+                box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+                transform: scale(1.1);
+            }
+        }
