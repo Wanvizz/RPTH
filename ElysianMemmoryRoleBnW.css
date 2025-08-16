@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+
+
+        .EMrole-container.white-theme {
+            --bg-primary: linear-gradient(145deg, #fefefe 0%, #f8f6f0 100%);
+            --bg-secondary: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(248,246,240,0.7) 100%);
+            --bg-message: #ffffff;
+            --bg-messagebox: linear-gradient(145deg, #fefefe 0%, #f8f6f0 100%);
+            --border-color: #e8e2d4;
+            --text-primary: #6b5b47;
+            --text-secondary: #a0916f;
+            --text-content: #5d5d5d;
+            --text-placeholder: #a0916f;
+            --shadow-primary: rgba(0,0,0,0.1);
+            --shadow-secondary: rgba(0,0,0,0.05);
+            --accent-color: #d4af37;
+            --shine-color: rgba(255,255,255,0.6);
+            --glow-from: rgba(0,0,0,0.1);
+            --glow-to: rgba(212,175,55,0.2);
+            --divider-base: #e8e2d4;
+            --divider-accent: rgba(212,175,55,0.6);
+        }
+
+
+
+
+
+
+
+
+        .EMrole-container.black-theme {
+            --bg-primary: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+            --bg-secondary: linear-gradient(180deg, rgba(42,42,42,0.9) 0%, rgba(26,26,26,0.7) 100%);
+            --bg-message: #1f1f1f;
+            --bg-messagebox: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+            --border-color: #444444;
+            --text-primary: #fff;
+            --text-secondary: #b8a082;
+            --text-content: #fff;
+            --text-placeholder: #fff;
+            --shadow-primary: rgba(0,0,0,0.3);
+            --shadow-secondary: rgba(0,0,0,0.2);
+            --accent-color: #d4af37;
+            --shine-color: rgba(42,42,42,0.5);
+            --glow-from: rgba(0,0,0,0.3);
+            --glow-to: rgba(212,175,55,0.3);
+            --divider-base: #444444;
+            --divider-accent: rgba(212,175,55,0.8);
+        }
+
+
+
+
+        .EMrole-container {
+            margin: 0px auto;
+            box-sizing: border-box;
+            font-family: 'Sarabun', sans-serif;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+            max-width: 600px;
+            width: 100%;
+            background: var(--bg-primary);
+            border-radius: 0px;
+            box-shadow: 
+                0 20px 40px var(--shadow-primary),
+                0 8px 16px var(--shadow-secondary),
+                inset 0 1px 0 rgba(255,255,255,0.1);
+            overflow: hidden;
+            position: relative;
+            border: 2px solid var(--border-color);
+        }
+
+
+
+
+        .EMrole-cs {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 30px 20px 0px;
+        }
+
+
+
+
+        .EMrole-cn {
+            font-size: 30px;
+            font-weight: 600;
+            font-family: "Roboto", sans-serif;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            animation: EMrole-shimmer 2s ease-in-out infinite;
+            text-shadow: 0 2px 4px var(--shadow-primary);
+        }
+
+
+
+
+        .EMrole-cn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--shine-color), transparent);
+            animation: EMrole-shine 3s ease-in-out infinite;
+        }
+
+
+
+
+        .EMrole-ct {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-style: italic;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+
+
+
+        .EMrole-cf {
+            width: 400px;
+            height: 200px;
+            margin: 20px auto 20px;
+            position: relative;
+            background: var(--bg-messagebox);
+            box-shadow: 
+                0 8px 16px var(--shadow-primary),
+                inset 0 2px 4px rgba(255,255,255,0.1),
+                inset 0 -2px 4px var(--shadow-secondary);
+            overflow: hidden;
+            border: 3px solid var(--border-color);
+            animation: EMrole-glow 3s ease-in-out infinite alternate;
+        }
+
+
+
+
+        .EMrole-ci {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+
+
+
+
+        @keyframes EMrole-glow {
+            from { 
+                box-shadow: 
+                    0 8px 16px var(--glow-from), 
+                    inset 0 2px 4px rgba(255,255,255,0.1), 
+                    inset 0 -2px 4px var(--shadow-secondary); 
+            }
+            to { 
+                box-shadow: 
+                    0 8px 20px var(--glow-to), 
+                    inset 0 2px 4px rgba(255,255,255,0.2), 
+                    inset 0 -2px 4px var(--accent-color); 
+            }
+        }
+
+
+
+
+        @keyframes EMrole-shimmer {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-2px); }
+        }
+
+
+
+
+        @keyframes EMrole-shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+
+
+
+        .EMrole-ms {
+            z-index: 2;
+            padding: 20px;
+        }
+
+
+
+
+        .EMrole-mbox {
+            padding: 0px;
+            font-size: 16px;
+            color: var(--text-content);
+            position: relative;
+        }
+
+
+
+
+        .EMrole-mholder {
+            color: var(--text-placeholder);
+            white-space: normal;
+        }
+
+
+
+
+        .EMrole-dline {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--divider-base), transparent);
+            margin: 15px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+
+
+        .EMrole-dline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--divider-accent), transparent);
+            animation: EMrole-flow 4s ease-in-out infinite;
+        }
+
+
+
+
+        @keyframes EMrole-flow {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+
+
+
+        @media (max-width: 640px) {
+            .EMrole-cf {
+                width: 300px;
+                height: 150px;
+            }
+            
+            .EMrole-cn {
+                font-size: 24px;
+            }
+        }
