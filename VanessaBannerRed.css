@@ -1,0 +1,298 @@
+.red-banner-container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
+        .red-banner-container * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .red-banner {
+            width: 600px;
+            height: 150px;
+            background: linear-gradient(135deg, #2a1515 0%, #1a1a1a 50%, #2a0000 100%);
+            border: 3px solid #8B0000;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(139, 0, 0, 0.3);
+        }
+
+
+        .red-banner:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(220, 20, 60, 0.5);
+            border-color: #DC143C;
+        }
+
+
+        /* พื้นหลังเอฟเฟกต์ */
+        .red-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(220, 20, 60, 0.1) 0%, transparent 70%);
+            animation: red-rotate 10s linear infinite;
+            opacity: 0.7;
+        }
+
+
+        @keyframes red-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+
+        /* เอฟเฟกต์พาร์ติเคิล */
+        .red-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+
+        .red-particle {
+            position: absolute;
+            background: #DC143C;
+            border-radius: 50%;
+            animation: red-float 6s ease-in-out infinite;
+        }
+
+
+        .red-particle:nth-child(1) {
+            width: 4px;
+            height: 4px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+
+        .red-particle:nth-child(2) {
+            width: 6px;
+            height: 6px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+
+        .red-particle:nth-child(3) {
+            width: 3px;
+            height: 3px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+
+        .red-particle:nth-child(4) {
+            width: 5px;
+            height: 5px;
+            top: 30%;
+            left: 70%;
+            animation-delay: 1s;
+        }
+
+
+        @keyframes red-float {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+        }
+
+
+        /* รูปตัวละคร */
+        .red-character-image {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            width: 250px;
+            height: 120px;
+            border-radius: 15px;
+            border: 3px solid #8B0000;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 30px rgba(220, 20, 60, 0.3);
+        }
+
+
+        .red-banner:hover .red-character-image {
+            border-color: #DC143C;
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(220, 20, 60, 0.6);
+        }
+
+
+        .red-character-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .red-placeholder-character {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #FF6B6B 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 120px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+
+        /* ข้อมูลตัวละคร */
+        .red-character-info {
+            position: absolute;
+            right: 100px;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: right;
+            z-index: 10;
+        }
+
+
+        .red-character-name {
+            font-size: 38px;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            animation: red-glow 2s ease-in-out infinite alternate;
+        }
+
+
+        @keyframes red-glow {
+            from { text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 0 0 20px rgba(220, 20, 60, 0.5); }
+            to { text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 0 0 30px rgba(220, 20, 60, 0.8); }
+        }
+
+
+        .red-character-title {
+            font-size: 16px;
+            color: #DC143C;
+            font-style: italic;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 10px;
+        }
+
+
+        .red-character-class {
+            font-size: 18px;
+            color: #FF6B6B;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+
+        /* ลายน้ำใสมุมขวาล่าง - ค้างคาว */
+        .red-decorative-element {
+            position: absolute;
+            bottom: -50px;
+            right: -20px;
+            width: 200px;
+            height: 200px;
+            opacity: 0.15;
+            filter: drop-shadow(0 0 10px rgba(220, 20, 60, 0.3));
+            transition: all 0.4s ease;
+            background-image: url("https://iili.io/3QFoQ24.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+
+        .red-banner:hover .red-decorative-element {
+            opacity: 0.25;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+
+        /* เอฟเฟกต์แสงวิ่ง */
+        .red-light-streak {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+
+        .red-banner:hover .red-light-streak {
+            left: 100%;
+        }
+
+
+        /* Badge หรือตราสำคัญ */
+        .red-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(45deg, #8B0000, #DC143C);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+            animation: red-pulse 2s infinite;
+        }
+
+
+        @keyframes red-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+
+        @media (max-width: 768px) {
+            .red-banner {
+                width: 90vw;
+                height: 250px;
+            }
+            
+            .red-character-image {
+                width: 200px;
+                height: 180px;
+                left: 20px;
+                top: 30px;
+            }
+            
+            .red-character-name {
+                font-size: 32px;
+            }
+            
+            .red-character-title {
+                font-size: 18px;
+            }
+            
+            .red-decorative-element {
+                width: 120px;
+                height: 120px;
+            }
+        }
