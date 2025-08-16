@@ -1,0 +1,271 @@
+.gray-banner {
+            width: 600px;
+            height: 150px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #3a3a3a 100%);
+            border: 3px solid #666;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(102, 102, 102, 0.3);
+        }
+
+
+        .gray-banner:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(192, 192, 192, 0.5);
+            border-color: #C0C0C0;
+        }
+
+
+        /* พื้นหลังเอฟเฟกต์สีเทา */
+        .gray-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(192, 192, 192, 0.1) 0%, transparent 70%);
+            animation: gray-rotate 10s linear infinite;
+            opacity: 0.7;
+        }
+
+
+        @keyframes gray-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+
+        /* เอฟเฟกต์พาร์ติเคิลสีเทา */
+        .gray-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+
+        .gray-particle {
+            position: absolute;
+            background: #C0C0C0;
+            border-radius: 50%;
+            animation: gray-float 6s ease-in-out infinite;
+        }
+
+
+        .gray-particle:nth-child(1) {
+            width: 4px;
+            height: 4px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+
+        .gray-particle:nth-child(2) {
+            width: 6px;
+            height: 6px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+
+        .gray-particle:nth-child(3) {
+            width: 3px;
+            height: 3px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+
+        .gray-particle:nth-child(4) {
+            width: 5px;
+            height: 5px;
+            top: 30%;
+            left: 70%;
+            animation-delay: 1s;
+        }
+
+
+        @keyframes gray-float {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+        }
+
+
+        /* รูปตัวละครกรอบสีเทา */
+        .gray-character-image {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            width: 250px;
+            height: 120px;
+            border-radius: 15px;
+            border: 3px solid #666;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 30px rgba(102, 102, 102, 0.3);
+        }
+
+
+        .gray-banner:hover .gray-character-image {
+            border-color: #666666;
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(120, 120, 120, 0.6);
+        }
+
+
+        .gray-character-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .gray-placeholder-character {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #666 0%, #C0C0C0 50%, #E5E5E5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 120px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+
+        /* ข้อมูลตัวละครธีมสีเทา */
+        .gray-character-info {
+            position: absolute;
+            right: 100px;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: right;
+            z-index: 10;
+        }
+
+
+        .gray-character-name {
+            font-size: 38px;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            animation: gray-glow 2s ease-in-out infinite alternate;
+        }
+
+
+        @keyframes gray-glow {
+            from { text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 0 0 20px rgba(192, 192, 192, 0.5); }
+            to { text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 0 0 30px rgba(192, 192, 192, 0.8); }
+        }
+
+
+        .gray-character-title {
+            font-size: 16px;
+            color: #C0C0C0;
+            font-style: italic;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 10px;
+        }
+
+
+        /* ลายน้ำใสมุมขวาล่าง - หมาป่าสีเทา */
+        .gray-decorative-element {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 100px;
+            height: 100px;
+            opacity: 0.15;
+            filter: drop-shadow(0 0 10px rgba(192, 192, 192, 0.3));
+            transition: all 0.4s ease;
+            background-image: url("https://iili.io/3Qo2Wlf.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+
+        .gray-banner:hover .gray-decorative-element {
+            opacity: 0.25;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+
+        /* เอฟเฟกต์แสงวิ่งสีเทา */
+        .gray-light-streak {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+
+        .gray-banner:hover .gray-light-streak {
+            left: 100%;
+        }
+
+
+        /* Badge หรือตราสำคัญสีเทา */
+        .gray-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(45deg, #575656, #666666);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(120, 120, 120, 0.4);
+            animation: gray-pulse 2s infinite;
+        }
+
+
+        @keyframes gray-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+
+        @media (max-width: 768px) {
+            .gray-banner {
+                width: 90vw;
+                height: 250px;
+            }
+            
+            .gray-character-image {
+                width: 200px;
+                height: 180px;
+                left: 20px;
+                top: 30px;
+            }
+            
+            .gray-character-name {
+                font-size: 32px;
+            }
+            
+            .gray-character-title {
+                font-size: 18px;
+            }
+            
+            .gray-decorative-element {
+                width: 120px;
+                height: 120px;
+            }
+        }
