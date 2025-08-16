@@ -1,1 +1,246 @@
-# RPTH
+       .banner {
+            width: 600px;
+            height: 150px;
+            background: linear-gradient(135deg, #2a1515 0%, #1a1a1a 50%, #2a0000 100%);
+            border: 3px solid #8B0000;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(139, 0, 0, 0.3);
+        }
+
+        .banner:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(220, 20, 60, 0.5);
+            border-color: #DC143C;
+        }
+
+        /* พื้นหลังเอฟเฟกต์ */
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(220, 20, 60, 0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* เอฟเฟกต์พาร์ติเคิล */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: #DC143C;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) {
+            width: 4px;
+            height: 4px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            width: 6px;
+            height: 6px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(3) {
+            width: 3px;
+            height: 3px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(4) {
+            width: 5px;
+            height: 5px;
+            top: 30%;
+            left: 70%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+        }
+
+        /* รูปตัวละคร */
+        .character-image {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            width: 250px;
+            height: 120px;
+            border-radius: 15px;
+            border: 3px solid #8B0000;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 30px rgba(220, 20, 60, 0.3);
+        }
+
+        .banner:hover .character-image {
+            border-color: #DC143C;
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(220, 20, 60, 0.6);
+        }
+
+        .character-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .placeholder-character {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #FF6B6B 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 120px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        /* ข้อมูลตัวละคร */
+        .character-info {
+            position: absolute;
+            right: 100px;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: right;
+            z-index: 10;
+        }
+
+        .character-name {
+            font-size: 38px;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 0 0 20px rgba(220, 20, 60, 0.5); }
+            to { text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 0 0 30px rgba(220, 20, 60, 0.8); }
+        }
+
+        .character-title {
+            font-size: 16px;
+            color: #DC143C;
+            font-style: italic;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 10px;
+        }
+
+        /* ลายน้ำใสมุมขวาล่าง - ค้างคาว */
+        .decorative-element {
+            position: absolute;
+            bottom: -40px;
+            right: -20px;
+            width: 200px;
+            height: 200px;
+            opacity: 0.15;
+            filter: drop-shadow(0 0 10px rgba(220, 20, 60, 0.3));
+            transition: all 0.4s ease;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='batGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%238B0000'/%3E%3Cstop offset='50%25' style='stop-color:%23DC143C'/%3E%3Cstop offset='100%25' style='stop-color:%23FF6B6B'/%3E%3C/linearGradient%3E%3C/defs%3E%3C!-- ตัวค้างคาว --%3E%3Cpath d='M100 60 Q80 40 60 50 Q40 60 30 80 Q25 90 35 95 Q50 90 70 95 Q85 100 100 90 Q115 100 130 95 Q150 90 165 95 Q175 90 170 80 Q160 60 140 50 Q120 40 100 60 Z' fill='url(%23batGradient)'/%3E%3C!-- หัว --%3E%3Cellipse cx='100' cy='75' rx='12' ry='15' fill='url(%23batGradient)'/%3E%3C!-- หู --%3E%3Cpath d='M88 65 Q85 55 90 60 Q95 65 88 65' fill='url(%23batGradient)'/%3E%3Cpath d='M112 65 Q115 55 110 60 Q105 65 112 65' fill='url(%23batGradient)'/%3E%3C!-- ตา --%3E%3Ccircle cx='95' cy='72' r='2' fill='%23FF6B6B'/%3E%3Ccircle cx='105' cy='72' r='2' fill='%23FF6B6B'/%3E%3C!-- ลวดลายเพิ่มเติม --%3E%3Cpath d='M140 120 Q160 130 150 150 Q130 140 140 120' fill='url(%23batGradient)' opacity='0.7'/%3E%3Ccircle cx='160' cy='110' r='6' fill='url(%23batGradient)' opacity='0.5'/%3E%3Cpath d='M50 140 Q30 150 40 170 Q60 160 50 140' fill='url(%23batGradient)' opacity='0.6'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .banner:hover .decorative-element {
+            opacity: 0.25;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* เอฟเฟกต์แสงวิ่ง */
+        .light-streak {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .banner:hover .light-streak {
+            left: 100%;
+        }
+
+        /* Badge หรือตราสำคัญ */
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(45deg, #8B0000, #DC143C);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .banner {
+                width: 90vw;
+                height: 250px;
+            }
+            
+            .character-image {
+                width: 200px;
+                height: 180px;
+                left: 20px;
+                top: 30px;
+            }
+            
+            .character-name {
+                font-size: 32px;
+            }
+            
+            .character-title {
+                font-size: 18px;
+            }
+            
+            .decorative-element {
+                width: 120px;
+                height: 120px;
+            }
+        }
