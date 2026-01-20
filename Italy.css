@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Cinzel:wght@400..900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+.VDITALY {
+  font-family: 'Cinzel', 'Bai Jamjuree', serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 90px;
+    position: relative;
+    background-color: #000000;
+}
+
+.VDITALY-HI {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.VDITALY-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.9);
+    opacity: 0.8;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border: 1px solid #333;
+}
+
+.VDITALY-MT h1 {
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: #b8a896;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.VDITALYRole {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    color: #888888;
+}
+
+.VDITALY .word {
+    color: #b8a896;
+    font-style: normal;
+    font-weight: 500;
+}
